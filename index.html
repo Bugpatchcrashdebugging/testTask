@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="head">
+        <h2 id="name">
+            <img src="image/tower_logo.png" alt="logo">
+        </h2>
+        <h3 id="address"></h3>
+    </div>
+    <div class="visual">
+        <div>
+            <img src="image/building.jpg" alt="building view">
+        </div>
+        <div id="map">
+        </div>
+    </div>
+    <div class="property">
+        <p>PROPERTY DETAILS</p>
+        <dl>
+            <dt>Property Type:</dt>
+            <dd id="property-type"></dd>
+            <dt>Total Building Area:</dt>
+            <dd id="total-building-area"></dd>
+            <dt>Tenancy:</dt>
+            <dd id="tenancy"></dd>
+            <dt>No. of Tenant:</dt>
+            <dd id="no.-of-tenant"></dd>
+            <dt>Website:</dt>
+            <dd id="website"></dd>
+            <dt>Property Class:</dt>
+            <dd id="property-class"></dd>
+            <dt>Year Built:</dt>
+            <dd id="year-built"></dd>
+            <dt>Floors:</dt>
+            <dd id="floors"></dd>
+            <dt>Description:</dt>
+            <dd id="description">Description</dd>
+        </dl>
+    </div>
+    <div class="availabilities">
+        <p>AVAILABILITIES</p>
+        <p>Record count</p>
+        <!-- TODO: parse from json? -->
+        <table>
+            <tbody id="ava">
+                <tr>
+                    <th>Unit Name/Number</th>
+                    <th>Record Type</th>
+                    <th>Available Area</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer></footer>
+    <!-- <script type="text/javascript" src="data/properties.json"></script>/ -->
+    <script src="js/main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwVBsmmTdSO8_olSrX7XU751jmySNDYMM&callback=initMap"></script>
+</body>
+
+</html>

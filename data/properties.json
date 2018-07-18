@@ -1,0 +1,33 @@
+[{
+    "Name":"NP Bike Shop",
+    "Address":"2277 Pickwick Dr, Camarillo, CA 93010, USA",
+    "Property Type":"Commercial",
+    "Property Class":"A",
+    "Floors":"2",
+    "Total Building Area":"700",
+    "Tenancy":"Lorem ipsum ...",
+    "No. of Tenant":"60",
+    "Website":"npbikeshop.com",
+    "Year Built":"2014",
+    "Description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque, orci nec elementum euismod, dui magna ornare quam, at interdum est nunc in elit. Suspendisse nec faucibus mi.",
+    "Unit Name/Number":"Bike Shop",
+    "Record Type":"Vacant",
+    "Available Area":"500",
+    "AVAILABILITIES":[
+       {
+          "Unit Name/Number":"Building, F-, 1-000",
+          "Record Type":"vacant",
+          "Available Area":"25.6000 sf"
+       },
+       {
+          "Unit Name/Number":"Building, F-, 1-000",
+          "Record Type":"vacant",
+          "Available Area":"25.6000 sf"
+       },
+       {
+          "Unit Name/Number":"Building, F-, 1-000",
+          "Record Type":"vacant",
+          "Available Area":"25.6000 sf"
+       }
+    ]
+}]

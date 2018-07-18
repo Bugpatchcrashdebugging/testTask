@@ -1,0 +1,38 @@
+.head {
+    font-family: 'Lato', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    padding-left:20px;
+}
+
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 50%;  /* The width is the width of the web page */
+   }
+.visual {
+    background-color: ivory;
+    display: flex;
+    margin: 15px;
+    padding: 10px;
+}
+img {
+    max-width: 100%;
+    /* display: block; */
+    height: auto;
+  }
+.visual div {
+    width: 50%;
+}
+.visual img{
+    height: 400px;
+}
+table {
+    width: 100%;
+    border: 1px solid blueviolet;
+}
+div>p{
+    text-align: center;
+}
+dt{
+    float: left;
+    clear:left;
+}
+
