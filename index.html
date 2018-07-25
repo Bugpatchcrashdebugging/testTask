@@ -12,62 +12,73 @@
 </head>
 
 <body>
-
-    <div class="head">
-        <h2 id="name">
-            <img src="image/tower_logo.png" alt="logo">
-        </h2>
-        <h3 id="address"></h3>
-    </div>
-    <div class="visual">
-        <div>
-            <img src="image/building.jpg" alt="building view">
+    <div class="content">
+        <div class="head">
+            <h2 id="name">
+                <img src="image/tower_logo.png" alt="logo">
+            </h2>
+            <h3 id="address"></h3>
         </div>
-        <div id="map">
+        <div class="visual">
+            <div>
+                <img src="image/ho1.jpg" alt="building view">
+            </div>
+            <div id="map">
+            </div>
         </div>
-    </div>
-    <div class="property">
-        <p>PROPERTY DETAILS</p>
-        <dl>
-            <dt>Property Type:</dt>
-            <dd id="property-type"></dd>
-            <dt>Total Building Area:</dt>
-            <dd id="total-building-area"></dd>
-            <dt>Tenancy:</dt>
-            <dd id="tenancy"></dd>
-            <dt>No. of Tenant:</dt>
-            <dd id="no.-of-tenant"></dd>
-            <dt>Website:</dt>
-            <dd id="website"></dd>
-            <dt>Property Class:</dt>
-            <dd id="property-class"></dd>
-            <dt>Year Built:</dt>
-            <dd id="year-built"></dd>
-            <dt>Floors:</dt>
-            <dd id="floors"></dd>
-            <dt>Description:</dt>
-            <dd id="description">Description</dd>
-        </dl>
-    </div>
-    <div class="availabilities">
-        <p>AVAILABILITIES</p>
-        <p>Record count</p>
-        <!-- TODO: parse from json? -->
-        <table>
-            <tbody id="ava">
-                <tr>
-                    <th>Unit Name/Number</th>
-                    <th>Record Type</th>
-                    <th>Available Area</th>
-                </tr>
-            </tbody>
-        </table>
+        <div class="prop-details">
+            <p>
+                <strong>PROPERTY DETAILS</strong>
+            </p>
+            <dl class="property">
+                <div class="prop-first">
+                    <dt>Property Type:</dt>
+                    <dd id="property-type"></dd>
+                    <dt>Total Building Area:</dt>
+                    <dd id="total-building-area"></dd>
+                    <dt>Tenancy:</dt>
+                    <dd id="tenancy"></dd>
+                    <dt>No. of Tenant:</dt>
+                    <dd id="no.-of-tenant"></dd>
+                </div>
+                <div class="prop-second">
+                    <dt>Website:</dt>
+                    <dd id="website"></dd>
+                    <dt>Property Class:</dt>
+                    <dd id="property-class"></dd>
+                    <dt>Year Built:</dt>
+                    <dd id="year-built"></dd>
+                    <dt>Floors:</dt>
+                    <dd id="floors"></dd>
+                </div>
+            </dl>
+        </div>
+        <div id="description">
+            <strong>Description:</strong>
+        </div>
+        <div class="availabilities">
+            <p>
+                <strong>AVAILABILITIES</strong>
+                <span id="record-cnt">count:</span>
+            </p>
+            <!-- TODO: parse from json? -->
+            <table>
+                <tbody id="avai-table">
+                    <tr>
+                        <th>Unit Name/Number</th>
+                        <th>Record Type</th>
+                        <th>Available Area</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <footer>
+            <img src="image/footer-background.png" alt="footer">
+        </footer>
     </div>
 
-    <footer></footer>
-    <!-- <script type="text/javascript" src="data/properties.json"></script>/ -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwVBsmmTdSO8_olSrX7XU751jmySNDYMM&callback=initMap" async defer></script>
     <script src="js/main.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwVBsmmTdSO8_olSrX7XU751jmySNDYMM&callback=initMap"></script>
 </body>
 
 </html>

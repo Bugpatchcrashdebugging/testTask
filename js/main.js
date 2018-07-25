@@ -7,83 +7,86 @@ function loadJSON(callback) {
   xobj.open("GET", "data/properties.json", true);
   xobj.onreadystatechange = function() {
     if (xobj.readyState == 4 && xobj.status == "200") {
-      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
       callback(xobj.responseText);
     }
   };
   xobj.send(null);
 }
+function insertData(data){
+  // Parse JSON string into object
+  var raw = JSON.parse(data)[0];
 
+  var name = document.getElementById("name");
+  name.append(raw["Name"]);
+
+  var address = window.mapAddress = document.getElementById("address");
+  address.append(raw["Address"]);
+
+  var propertyType = document.getElementById("property-type");
+  propertyType.append(raw["Property Type"]);
+
+  var totalBuildingArea = document.getElementById("total-building-area");
+  totalBuildingArea.append(raw["Total Building Area"]);
+
+  var tenancy = document.getElementById("tenancy");
+  tenancy.append(raw["Tenancy"]);
+
+  var noOfTenant = document.getElementById("no.-of-tenant");
+  noOfTenant.append(raw["No. of Tenant"]);
+
+  var website = document.getElementById("website");
+  website.append(raw["Website"]);
+
+  var propertyClass = document.getElementById("property-class");
+  propertyClass.append(raw["Property Class"]);
+
+  var yearBuilt = document.getElementById("year-built");
+  yearBuilt.append(raw["Year Built"]);
+
+  var floors = document.getElementById("floors");
+  floors.append(raw["Floors"]);
+
+  var description = document.getElementById("description");
+  description.append(raw["Description"]);
+
+  var cnt = document.getElementById("record-cnt");
+  cnt.append(raw["AVAILABILITIES"].length);
+
+  var table = raw["AVAILABILITIES"];
+  var outHTML = "";
+  var unit = null;
+  var elTr = null;
+  var record = "";
+  var area = "";
+
+  function addTableElements(fieldName) {
+    var text = document.createTextNode(table[i][fieldName]);
+    var elTd = document.createElement("td");
+    elTd.appendChild(text);
+    return elTd;
+  }
+
+  for (var i = 0; i < table.length; i++) {
+    unit = addTableElements("Unit Name/Number");
+    record = addTableElements("Record Type");
+    area = addTableElements("Available Area");
+
+    elTr = document.createElement("tr");
+    elTr.appendChild(unit);
+    elTr.appendChild(record);
+    elTr.appendChild(area);
+
+    var description = document.getElementById("avai-table");
+    description.append(elTr);
+  }
+  var description = document.getElementById("avai-table");
+  description.append(outHTML);
+}
 function init() {
-  loadJSON(function(response) {
-    // Parse JSON string into object
-    var raw = JSON.parse(response)[0];
-
-    var name = document.getElementById("name");
-    name.append(raw["Name"]);
-
-    var address = document.getElementById("address");
-    address.append(raw["Address"]);
-
-    var propertyType = document.getElementById("property-type");
-    propertyType.append(raw["Property Type"]);
-
-    var totalBuildingArea = document.getElementById("total-building-area");
-    totalBuildingArea.append(raw["Total Building Area"]);
-
-    var tenancy = document.getElementById("tenancy");
-    tenancy.append(raw["Tenancy"]);
-
-    var noOfTenant = document.getElementById("no.-of-tenant");
-    noOfTenant.append(raw["No. of Tenant"]);
-
-    var website = document.getElementById("website");
-    website.append(raw["Website"]);
-
-    var propertyClass = document.getElementById("property-class");
-    propertyClass.append(raw["Property Class"]);
-
-    var yearBuilt = document.getElementById("year-built");
-    yearBuilt.append(raw["Year Built"]);
-
-    var floors = document.getElementById("floors");
-    floors.append(raw["Floors"]);
-
-    var description = document.getElementById("description");
-    description.append(raw["Description"]);
-
-    var table = raw["AVAILABILITIES"];
-    var outHTML = "";
-    var unit = null;
-    var elTr = null;
-    var record = "";
-    var area = "";
-
-    function addTableElements(fieldName) {
-      var text = document.createTextNode(table[i][fieldName]);
-      var elTd = document.createElement("td");
-      elTd.appendChild(text);
-      return elTd;
-    }
-
-    for (var i = 0; i < table.length; i++) {
-      unit = addTableElements("Unit Name/Number");
-      record = addTableElements("Record Type");
-      area = addTableElements("Available Area");
-
-      elTr = document.createElement("tr");
-      elTr.appendChild(unit);
-      elTr.appendChild(record);
-      elTr.appendChild(area);
-
-      var description = document.getElementById("ava");
-      description.append(elTr);
-    }
-    var description = document.getElementById("ava");
-    description.append(outHTML);
-  });
+  loadJSON(insertData);
 }
 
+console.log(window.mapAddress);
 var geocoder;
 var map;
 function initMap() {
